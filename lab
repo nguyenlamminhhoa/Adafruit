@@ -9,19 +9,19 @@ AIO_USERNAME = "nguyenlamminhhoa"
 AIO_KEY = ""
 
 def connected(client):
-    print("Ket noi thanh cong ...")
+    print("Server connected!")
     client.subscribe("button1")
     client.subscribe("button2")
 
 def subscribe(client , userdata , mid , granted_qos):
-    print("Subscribe thanh cong ...")
+    print("Subscribed ...")
 
 def disconnected(client):
-    print("Ngat ket noi ...")
+    print("Disconnected")
     sys.exit (1)
 
 def message(client , feed_id , payload):
-    print("Nhan du lieu: " + payload)
+    print("Recevied: " + payload)
 
 client = MQTTClient(AIO_USERNAME , AIO_KEY)
 client.on_connect = connected
