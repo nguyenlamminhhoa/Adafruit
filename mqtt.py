@@ -31,6 +31,7 @@ def message(client , feed_id , payload):
 global_equation = "x1 + x2 + x3"
 
 def init_global_equation():
+    global global_equation
     headers = {}
     aio_url = "https://io.adafruit.com/api/v2/nguyenlamminhhoa/feeds/equation"
     x = requests.get(url=aio_url, headers=headers, verify=False)
